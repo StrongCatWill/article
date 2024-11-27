@@ -1,0 +1,18 @@
+{{>layouts/header}}
+
+<div class="card m-2">
+    {{#data}}
+        <div class="card-header"></div>
+        {{article.date}}
+
+    <div class="card-body">
+        <h5 class="card-title">{{article.title}}</h5>
+        <p class="card-text">{{article.content}}</p>
+        <a href="/articles/{{article.id}}/edit" class="btn btn-primary">수정</a>
+        <a href="/articles/{{article.id}}/delete" class="btn btn-danger">삭제</a>
+        <a href="/articles" class="btn btn-primary">목록</a>
+    </div>
+    {{/data}}
+</div>
+
+{{>layouts/footer}}
