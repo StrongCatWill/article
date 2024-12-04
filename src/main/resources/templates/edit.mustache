@@ -1,0 +1,21 @@
+{{>layouts/header}}
+{{$alert_msg}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{alert_msg}}
+        {{msg}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{{/alert_msg}}
+<form class="container" action="/articles/update" method="post">
+    <input name="id" type="hidden" value="{{article.id}}">
+    <div class="mb-3">
+        <label for="title" class="form-label">제목</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{article.title}}">
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">제목</label>
+        <textarea class="form-control" id="content" rows="3" name="content" value="{{article.content}}"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">전송</button>
+</form>
+{{>layouts/footer}}

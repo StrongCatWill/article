@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Article {
 
     @Id @GeneratedValue
-    private Long Id;
+    private Long id;
 
     @Column
     private String title;
@@ -27,7 +27,8 @@ public class Article {
     @Column
     private LocalDate date;
 
-    public Article(String title, String content, LocalDate date) {
+    public Article(Long id, String title, String content) {
+        this.id = id;
         this.title = title;
         this.content = content;
         this.date = LocalDate.now();
